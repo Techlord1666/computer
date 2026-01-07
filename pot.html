@@ -3,15 +3,11 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Our Works - MEGA GRACE COMPUTER INTEL</title>
+    <title>Portfolio & Reviews - MEGA GRACE</title>
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Explore the official portfolio of Mega Grace Computer Intel. High-quality web designs, mobile apps, and branding projects.">
-    <meta name="keywords" content="Daniel Ikezue, Mega Grace, Portfolio, Web Design, Nigeria Tech, App Development">
-
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap" rel="stylesheet"/>
 
     <script id="tailwind-config">
         tailwind.config = {
@@ -27,7 +23,6 @@
     <style>
         body { font-family: 'Manrope', sans-serif; scroll-behavior: smooth; }
         .project-card:hover img { transform: scale(1.05); }
-        /* Animation for new comments */
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         .animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
     </style>
@@ -46,21 +41,19 @@
                 <a href="serv.html" class="text-sm font-semibold hover:text-primary transition-colors">Services</a>
                 <a href="pot.html" class="text-primary text-sm font-bold">Portfolio</a>
                 <a href="about.html" class="text-sm font-semibold hover:text-primary transition-colors">About</a>
-                <button onclick="openQuoteModal()" class="bg-primary text-white px-5 py-2 rounded-lg font-bold text-sm shadow-lg hover:bg-blue-700 transition-all">Get a Quote</button>
+                <button onclick="document.getElementById('quoteModal').style.display='flex'" class="bg-primary text-white px-5 py-2 rounded-lg font-bold text-sm shadow-lg hover:bg-blue-700 transition-all">Get a Quote</button>
             </nav>
         </div>
     </header>
 
-    <!-- Hero -->
-    <section class="py-16 px-6 text-center">
-        <div class="max-w-3xl mx-auto">
-            <span class="text-primary font-bold uppercase tracking-widest text-xs">Our Previous Works</span>
-            <h1 class="text-4xl md:text-6xl font-black mt-4 mb-6">Designs That <span class="text-primary">Convert</span></h1>
-            <p class="text-gray-500 text-lg">Excellence in every pixel. Explore our latest projects.</p>
-        </div>
+    <!-- Portfolio Header -->
+    <section class="py-12 px-6 text-center">
+        <h1 class="text-4xl md:text-6xl font-black mb-4">Our Creative <span class="text-primary">Portfolio</span></h1>
+        <p class="text-gray-500 max-w-2xl mx-auto">Explore our high-quality designs and read real-time reviews from our satisfied clients below.</p>
     </section>
 
-    <!-- Portfolio Grid (Keeping your 18 projects) -->
+    <!-- [Note: Keep your 18 project cards here as they were in the previous code] -->
+<!-- Portfolio Grid (Keeping your 18 projects) -->
     <section class="pb-24 px-6">
     <div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         
@@ -252,56 +245,48 @@
 
     </div>
 </section>
-    <section class="pb-24 px-6">
-        <div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <!-- Project cards go here (same as before) -->
-            <!-- Note: I am omitting the 18 cards for brevity, but you should keep them in your file -->
-             <p class="text-center col-span-full text-gray-400">Your 18 project cards are displayed here...</p>
-        </div>
-    </section>
-
-    <!-- DYNAMIC COMMENT & RATING SECTION -->
+    <!-- DYNAMIC REVIEW SYSTEM -->
     <section class="w-full py-20 px-6 bg-white dark:bg-[#1a2230] border-t dark:border-gray-800">
         <div class="max-w-[900px] mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-5xl font-black mb-4">Client Feedback</h2>
-                <p class="text-gray-500">Rate our service and see what others are saying instantly!</p>
+                <h2 class="text-3xl md:text-5xl font-black mb-4">What Our Clients Say</h2>
+                <p class="text-gray-500">Your feedback helps us grow. Share your experience!</p>
             </div>
 
             <!-- Review Form -->
             <div class="bg-[#f6f6f8] dark:bg-background-dark p-8 rounded-3xl border dark:border-gray-700 shadow-sm mb-16">
-                <h3 class="text-xl font-bold mb-6">Write a Review</h3>
+                <h3 class="text-xl font-bold mb-6">Leave a Review</h3>
                 <div class="flex flex-col gap-5">
-                    <input type="text" id="rev-name" placeholder="Full Name" class="w-full p-4 rounded-xl border-none ring-1 ring-gray-200 dark:bg-slate-800 dark:ring-gray-700 outline-none focus:ring-2 focus:ring-primary">
+                    <input type="text" id="rev-name" placeholder="Your Name" class="w-full p-4 rounded-xl border-none ring-1 ring-gray-200 dark:bg-slate-800 dark:ring-gray-700 outline-none focus:ring-2 focus:ring-primary">
                     
                     <div class="flex items-center gap-4 bg-white dark:bg-slate-800 p-4 rounded-xl ring-1 ring-gray-200 dark:ring-gray-700">
-                        <span class="text-sm font-bold">Star Rating:</span>
+                        <span class="text-sm font-bold">Rating:</span>
                         <div id="star-input" class="flex text-gray-300">
-                            <button onclick="setStar(1)" class="material-symbols-outlined !text-3xl hover:text-yellow-500 transition-colors">star</button>
-                            <button onclick="setStar(2)" class="material-symbols-outlined !text-3xl hover:text-yellow-500 transition-colors">star</button>
-                            <button onclick="setStar(3)" class="material-symbols-outlined !text-3xl hover:text-yellow-500 transition-colors">star</button>
-                            <button onclick="setStar(4)" class="material-symbols-outlined !text-3xl hover:text-yellow-500 transition-colors">star</button>
-                            <button onclick="setStar(5)" class="material-symbols-outlined !text-3xl text-yellow-500 transition-colors">star</button>
+                            <button onclick="setStar(1)" class="material-symbols-outlined !text-3xl hover:text-yellow-500 cursor-pointer">star</button>
+                            <button onclick="setStar(2)" class="material-symbols-outlined !text-3xl hover:text-yellow-500 cursor-pointer">star</button>
+                            <button onclick="setStar(3)" class="material-symbols-outlined !text-3xl hover:text-yellow-500 cursor-pointer">star</button>
+                            <button onclick="setStar(4)" class="material-symbols-outlined !text-3xl hover:text-yellow-500 cursor-pointer">star</button>
+                            <button onclick="setStar(5)" class="material-symbols-outlined !text-3xl text-yellow-500 cursor-pointer">star</button>
                         </div>
                         <input type="hidden" id="rev-rating" value="5">
                     </div>
 
-                    <textarea id="rev-comment" rows="4" placeholder="How was your experience working with Mega Grace?" class="w-full p-4 rounded-xl border-none ring-1 ring-gray-200 dark:bg-slate-800 dark:ring-gray-700 outline-none focus:ring-2 focus:ring-primary"></textarea>
+                    <textarea id="rev-comment" rows="3" placeholder="Write your comment here..." class="w-full p-4 rounded-xl border-none ring-1 ring-gray-200 dark:bg-slate-800 dark:ring-gray-700 outline-none focus:ring-2 focus:ring-primary"></textarea>
                     
                     <div class="p-4 bg-white dark:bg-slate-800 rounded-xl ring-1 ring-gray-200 dark:ring-gray-700">
-                        <label class="block text-sm font-bold mb-2">Upload Project Photo (Optional):</label>
-                        <input type="file" id="rev-image" accept="image/*" class="text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-white hover:file:bg-blue-700">
+                        <label class="block text-sm font-bold mb-2">Upload Your Project Photo (Optional):</label>
+                        <input type="file" id="rev-image" accept="image/*" class="text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:bg-primary file:text-white">
                     </div>
 
-                    <button onclick="submitReview()" id="submit-btn" class="w-full py-4 bg-primary text-white font-black rounded-xl shadow-lg shadow-primary/30 hover:bg-blue-700 hover:-translate-y-1 transition-all">
-                        Post My Review
+                    <button onclick="submitReview()" id="submit-btn" class="w-full py-4 bg-primary text-white font-black rounded-xl shadow-lg hover:bg-blue-700 transition-all">
+                        Submit Review
                     </button>
                 </div>
             </div>
 
-            <!-- Live Feed Container -->
-            <div id="reviews-feed" class="space-y-8">
-                <p class="text-center text-gray-400">Loading live comments...</p>
+            <!-- Review Feed -->
+            <div id="reviews-feed" class="space-y-6">
+                <p class="text-center text-gray-400">Fetching live comments...</p>
             </div>
         </div>
     </section>
@@ -311,35 +296,35 @@
         <p>© 2024 MEGA GRACE COMPUTER INTEL. All rights reserved.</p>
     </footer>
 
-    <!-- Firebase System Script -->
+    <!-- Firebase Script -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
         import { getFirestore, collection, addDoc, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
         import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
 
-        // Your provided Config
+        // YOUR NEW CONFIG
         const firebaseConfig = {
-            apiKey: "AIzaSyCrALl0EJL2YXmz2Rb_eA8qW97JRZqFKvc",
-            authDomain: "megagracereviews.firebaseapp.com",
-            projectId: "megagracereviews",
-            storageBucket: "megagracereviews.firebasestorage.app",
-            messagingSenderId: "1032153440546",
-            appId: "1:1032153440546:web:90b1a047ab9f9930ba857b",
-            measurementId: "G-8ETZJ16KN9"
+            apiKey: "AIzaSyDjpnharQkv_P9Eoma7iWq3m3bagdeieC0",
+            authDomain: "reviews-555a6.firebaseapp.com",
+            projectId: "reviews-555a6",
+            storageBucket: "reviews-555a6.firebasestorage.app",
+            messagingSenderId: "336276484048",
+            appId: "1:336276484048:web:162664884ccbf6f49e53d5",
+            measurementId: "G-YT59Y1QXP7"
         };
 
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
         const storage = getStorage(app);
 
-        // UI: Star Selection
+        // UI: Stars
         window.setStar = (val) => {
             document.getElementById('rev-rating').value = val;
             const stars = document.querySelectorAll('#star-input button');
             stars.forEach((s, i) => s.style.color = i < val ? '#eab308' : '#d1d5db');
         };
 
-        // Logic: Submit Review
+        // Logic: Submit
         window.submitReview = async () => {
             const name = document.getElementById('rev-name').value;
             const comment = document.getElementById('rev-comment').value;
@@ -347,23 +332,21 @@
             const imageFile = document.getElementById('rev-image').files[0];
             const btn = document.getElementById('submit-btn');
 
-            if(!name || !comment) return alert("Please enter your name and comment.");
+            if(!name || !comment) return alert("Please fill Name and Comment.");
 
-            btn.innerText = "Uploading Review...";
+            btn.innerText = "Posting...";
             btn.disabled = true;
 
             let imageUrl = "";
 
             try {
-                // 1. Upload Image if exists
                 if(imageFile) {
-                    const storageRef = ref(storage, 'reviews/' + Date.now() + "_" + name);
+                    const storageRef = ref(storage, 'feedback/' + Date.now());
                     const snapshot = await uploadBytes(storageRef, imageFile);
                     imageUrl = await getDownloadURL(snapshot.ref);
                 }
 
-                // 2. Save Data to Firestore
-                await addDoc(collection(db, "reviews"), {
+                await addDoc(collection(db, "comments"), {
                     name: name,
                     comment: comment,
                     rating: parseInt(rating),
@@ -371,42 +354,38 @@
                     timestamp: Date.now()
                 });
 
-                // Clear form
                 document.getElementById('rev-name').value = "";
                 document.getElementById('rev-comment').value = "";
                 document.getElementById('rev-image').value = "";
-                btn.innerText = "Post My Review";
+                btn.innerText = "Submit Review";
                 btn.disabled = false;
-
-            } catch (error) {
-                console.error("Error:", error);
-                alert("Something went wrong. Check your Firebase Rules.");
+            } catch (e) {
+                console.error(e);
+                alert("Error! Did you update your Firebase Rules to allow read/write?");
                 btn.disabled = false;
             }
         };
 
-        // Logic: Real-time Update (Feed)
-        const q = query(collection(db, "reviews"), orderBy("timestamp", "desc"));
+        // Logic: Feed
+        const q = query(collection(db, "comments"), orderBy("timestamp", "desc"));
         onSnapshot(q, (snapshot) => {
             const feed = document.getElementById('reviews-feed');
             feed.innerHTML = "";
             snapshot.forEach((doc) => {
-                const data = doc.data();
-                const stars = '⭐'.repeat(data.rating);
-                
-                const imgHtml = data.imageUrl ? `<img src="${data.imageUrl}" class="mt-4 rounded-xl max-h-64 w-full object-cover border dark:border-gray-700 shadow-sm">` : '';
-
+                const d = doc.data();
+                const stars = '⭐'.repeat(d.rating);
+                const img = d.imageUrl ? `<img src="${d.imageUrl}" class="mt-4 rounded-xl w-full max-h-80 object-cover shadow-sm">` : '';
                 feed.innerHTML += `
-                    <div class="bg-white dark:bg-[#1a2233] p-6 rounded-2xl shadow-md border dark:border-gray-800 animate-fade-in">
-                        <div class="flex justify-between items-center mb-4">
+                    <div class="bg-white dark:bg-[#1a2233] p-6 rounded-2xl border dark:border-gray-800 animate-fade-in shadow-sm">
+                        <div class="flex justify-between items-start mb-3">
                             <div>
-                                <h4 class="font-black text-lg text-primary">${data.name}</h4>
-                                <div class="text-xs text-yellow-500 font-bold">${stars}</div>
+                                <h4 class="font-bold text-lg text-primary">${d.name}</h4>
+                                <div class="text-sm">${stars}</div>
                             </div>
-                            <span class="text-[10px] text-gray-400 uppercase font-bold">${new Date(data.timestamp).toLocaleDateString()}</span>
+                            <span class="text-[10px] text-gray-400 uppercase">${new Date(d.timestamp).toLocaleDateString()}</span>
                         </div>
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">${data.comment}</p>
-                        ${imgHtml}
+                        <p class="text-gray-600 dark:text-gray-300">${d.comment}</p>
+                        ${img}
                     </div>
                 `;
             });
